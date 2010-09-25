@@ -1,6 +1,6 @@
 Summary: IM client based on GTK+2.0, using CHINA MOBILE's Fetion Protocol Version 4
 Name: openfetion
-Version: 1.8
+Version: 1.9
 Release: %mkrel 1
 Group: Networking/Instant messaging
 License: GPLv2+

@@ -1,6 +1,6 @@
 Summary: IM client based on GTK+2.0, using CHINA MOBILE's Fetion Protocol Version 4
 Name: openfetion
-Version: 1.9
+Version: 2.0.1
 Release: %mkrel 1
 Group: Networking/Instant messaging
 License: GPLv2+
@@ -13,6 +13,7 @@ BuildRequires: openssl-devel
 BuildRequires: libnotify-devel
 BuildRequires: libxml2-devel
 BuildRequires: libgstreamer-devel
+BuildRequires: libxscrnsaver-devel
 BuildRequires: intltool
 
 %description
@@ -21,10 +22,9 @@ Protocol Version 4.
 
 %prep
 %setup -qn %name-%version
-%patch1 -p0 -b .str
 
 %build
-%configure2_5x --disable-static
+%configure2_5x --disable-static --disable-nm
 %make
 
 %install
@@ -45,3 +45,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/lib*.so.*
 %{_datadir}/applications/*.desktop
 %{_datadir}/%{name}
+%{_datadir}/pixmaps/*

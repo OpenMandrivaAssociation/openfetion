@@ -14,6 +14,7 @@ BuildRequires: libnotify-devel
 BuildRequires: libxml2-devel
 BuildRequires: libgstreamer-devel
 BuildRequires: libxscrnsaver-devel
+BuildRequires: sqlite3-devel
 BuildRequires: intltool
 
 %description

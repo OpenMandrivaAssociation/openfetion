@@ -1,6 +1,6 @@
 Summary: IM client based on GTK+2.0, using CHINA MOBILE's Fetion Protocol Version 4
 Name: openfetion
-Version: 2.0.7
+Version: 2.1.0
 Release: %mkrel 1
 Group: Networking/Instant messaging
 License: GPLv2+
@@ -9,13 +9,11 @@ Source0: http://ofetion.googlecode.com/files/%{name}-%{version}.tar.gz
 Patch1: openfetion-1.7-str-fmt.patch
 BuildRoot: %{_tmppath}/%{name}-root
 Buildrequires: gtk2-devel
-BuildRequires: openssl-devel
 BuildRequires: libnotify-devel
-BuildRequires: libxml2-devel
 BuildRequires: libgstreamer-devel
 BuildRequires: libxscrnsaver-devel
-BuildRequires: sqlite3-devel
-BuildRequires: intltool
+BuildRequires: libofetion-devel >= %{version}
+BuildRequires: cmake
 
 %description
 OpenFetion is a IM client based on GTK+2.0, using CHINA MOBILE's Fetion
@@ -25,14 +23,12 @@ Protocol Version 4.
 %setup -qn %name-%version
 
 %build
-%configure2_5x --disable-static --disable-nm
+%cmake -DWITH_NETWORKMANAGER=OFF
 %make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall_std
-
-rm -rf %buildroot%_includedir %buildroot%_libdir/*.{la,so} %buildroot%_libdir/pkgconfig/*.pc
+%makeinstall_std -C build
 
 %find_lang %name
 
@@ -43,7 +39,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc AUTHORS ChangeLog NEWS README
 %{_bindir}/%name
-%{_libdir}/lib*.so.*
+%{_datadir}/%name
 %{_datadir}/applications/*.desktop
-%{_datadir}/%{name}
 %{_datadir}/pixmaps/*

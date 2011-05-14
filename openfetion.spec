@@ -12,7 +12,9 @@ Buildrequires: gtk2-devel
 BuildRequires: libnotify-devel
 BuildRequires: libgstreamer-devel
 BuildRequires: libxscrnsaver-devel
+%if %mdkversion >= 201100
 BuildRequires: networkmanager-devel
+%endif
 BuildRequires: libofetion-devel >= 2.2.0
 BuildRequires: cmake
 

@@ -12,6 +12,7 @@ Buildrequires: gtk2-devel
 BuildRequires: libnotify-devel
 BuildRequires: libgstreamer-devel
 BuildRequires: libxscrnsaver-devel
+BuildRequires: networkmanager-devel
 BuildRequires: libofetion-devel >= 2.2.0
 BuildRequires: cmake
 
@@ -23,7 +24,7 @@ Protocol Version 4.
 %setup -qn %name-%version
 
 %build
-%cmake -DWITH_NETWORKMANAGER=OFF
+%cmake
 %make
 
 %install
@@ -42,3 +43,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%name
 %{_datadir}/applications/*.desktop
 %{_datadir}/pixmaps/*
+%{_mandir}/man1/*

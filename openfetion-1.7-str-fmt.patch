@@ -1,0 +1,10 @@
+--- src/fx_util.c.str	2010-08-09 17:00:41.000000000 +0200
++++ src/fx_util.c	2010-08-09 17:00:57.000000000 +0200
+@@ -74,6 +74,7 @@
+ 									GTK_DIALOG_DESTROY_WITH_PARENT,
+ 									GTK_MESSAGE_WARNING,
+ 									GTK_BUTTONS_OK,
++									"%s",
+ 									message);
+ 	gtk_window_set_title(GTK_WINDOW(dialog), "Warning");
+ 	gtk_dialog_run(GTK_DIALOG(dialog));

@@ -4,7 +4,7 @@ Version: 2.2.1
 Release: %mkrel 1
 Group: Networking/Instant messaging
 License: GPLv2+
-URL: http://code.google.com/p/ofetion/
+URL: https://code.google.com/p/ofetion/
 Source0: http://ofetion.googlecode.com/files/%{name}-%{version}.tar.gz
 Patch1: openfetion-1.7-str-fmt.patch
 BuildRoot: %{_tmppath}/%{name}-root
